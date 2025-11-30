@@ -326,3 +326,104 @@ Display dealership contact details.
 - Appointment booking
 - Blog/news section
 - WhatsApp chat integration
+
+---
+
+## 11. SEO & Discoverability
+
+### 11.1 Goals
+
+- Ensure pages are indexable, understandable, and shareable by search engines and social platforms.
+- Keep SEO configuration lightweight and data-driven to add/adjust keywords later without code changes.
+
+### 11.2 Technical Requirements
+
+- **Meta Tags (per page):** `title`, `meta description`, `meta keywords` (optional), `viewport`.
+- **Open Graph & Twitter Cards:** Set `og:title`, `og:description`, `og:image`, `og:url`, and Twitter equivalents for share previews.
+- **Canonical URLs:** Add a canonical link tag to avoid duplicate content.
+- **hreflang:** Provide `hreflang` pairs for EN/AR pages (e.g., `en` and `ar-SA`) to signal language/region variants.
+- **Robots & Sitemap:**
+  - Generate `sitemap.xml` with both language variants.
+  - Provide `robots.txt` allowing crawl of public pages.
+- **Structured Data (JSON-LD):**
+  - `Organization` or `LocalBusiness` with dealership name, logo, phone, email, and branches as `PostalAddress`.
+  - `BreadcrumbList` for multi-level pages (if applicable).
+- **URL Strategy:** Clean, human-readable paths; language in path or subdirectory, e.g., `/en/...` and `/ar/...`.
+- **Performance Signals:**
+  - Optimize images (responsive sizes, modern formats where feasible).
+  - Defer non-critical JS; inline critical CSS; target Core Web Vitals (LCP < 2.5s, CLS < 0.1, INP < 200ms).
+- **Accessibility Alignment:** Semantic headings (`h1` per page), alt text for images, accessible nav—supports SEO and usability.
+
+### 11.3 Content & Keywords Management
+
+- **Central SEO Config:** Maintain a small JSON/JS config (e.g., `/assets/js/seo-config.js` or `seo.json`) with per-page entries:
+
+```json
+{
+  "en": {
+    "home": {
+      "title": "Toyota Dealership — CityName",
+      "description": "Official Toyota sales, parts, and service in CityName.",
+      "keywords": ["Toyota", "dealership", "service", "parts", "CityName"],
+      "ogImage": "/assets/images/og/home.jpg"
+    },
+    "services": {
+      "title": "Toyota Services — Sales, After-Sales, Parts",
+      "description": "Explore sales, maintenance, and genuine Toyota parts.",
+      "keywords": ["Toyota services", "maintenance", "genuine parts"],
+      "ogImage": "/assets/images/og/services.jpg"
+    }
+  },
+  "ar": {
+    "home": {
+      "title": "وكالة تويوتا — اسم المدينة",
+      "description": "مبيعات وقطع غيار وخدمات تويوتا الرسمية في اسم المدينة.",
+      "keywords": ["تويوتا", "وكالة", "خدمات", "قطع غيار", "اسم المدينة"],
+      "ogImage": "/assets/images/og/home-ar.jpg"
+    }
+  }
+}
+```
+
+- **Runtime Injection:** On each page, read the config based on locale + route and inject `title`, `meta description`, optional `meta keywords`, OG/Twitter tags.
+- **Keyword Flexibility:** Ability to add/remove keywords later by updating the config only—no template code changes.
+- **Editorial Guidelines:** Use clear, local terms customers search for (city, services, phone availability). Keep descriptions 140–160 characters, unique per page.
+
+### 11.4 Deliverables
+
+- `robots.txt`, `sitemap.xml` (static generation or build step).
+- JSON-LD snippets embedded in `index.html`, `services.html`, `about.html`, `contact.html` (both EN/AR variations with correct `@language`).
+- `seo-config.js` or `seo.json` and simple loader in `assets/js/main.js` to set page head tags.
+- Documented URL scheme and hreflang mapping in the PRD.
+
+---
+
+## 12. Analytics & Monitoring
+
+- **Privacy-friendly Analytics:** Include a toggleable analytics snippet (e.g., Plausible or Google Analytics) loaded after consent if needed.
+- **Basic Events:** Page views, language switch clicks, contact link clicks (phone/email/map).
+- **Error Monitoring (Optional):** Lightweight console error logging to help catch broken links or assets.
+
+---
+
+## 13. Legal & Privacy
+
+- **Contact Links:** Use `tel:` and `mailto:` correctly; avoid auto-submitting any personal data.
+- **Cookie Policy (If Analytics):** Link to a simple cookie/privacy notice if analytics or external embeds are used.
+
+---
+
+## 14. Internationalization Enhancements
+
+- **Locales:** `en` and `ar-SA`.
+- **Mirroring:** Ensure RTL styles properly flip layout, carousel arrows, and alignments.
+- **Hreflang Matrix:** Document pairs for each page (e.g., `/en/contact` ↔ `/ar/contact`).
+
+---
+
+## 15. Performance Budgets
+
+- **Images:** Hero images ≤ 300KB (desktop), service images ≤ 200KB.
+- **JS:** Keep inline + vendor JS under ~100KB uncompressed for static build.
+- **CSS:** Critical CSS in head; total CSS ≤ 100KB.
+- **Targets:** LCP < 2.5s on 3G, CLS < 0.1, INP < 200ms.
