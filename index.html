@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyota Masar - Redirecting...</title>
+    <meta
+      name="description"
+      content="Official Toyota dealership in Riyadh - Sales, Service, and Genuine Parts"
+    />
+
+    <!-- Redirect to English version by default -->
+    <meta http-equiv="refresh" content="0; url=/en/" />
+    <link rel="canonical" href="https://toyotamasar.com/en/" />
+
+    <!-- Hreflang for language discovery -->
+    <link rel="alternate" hreflang="en" href="https://toyotamasar.com/en/" />
+    <link rel="alternate" hreflang="ar-SA" href="https://toyotamasar.com/ar/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://toyotamasar.com/en/"
+    />
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f6f6f6;
+        color: #1a1a1a;
+      }
+      .redirect-container {
+        text-align: center;
+        padding: 2rem;
+      }
+      .redirect-container h1 {
+        color: #eb0a1e;
+        margin-bottom: 1rem;
+      }
+      .redirect-container p {
+        color: #707070;
+        margin-bottom: 1.5rem;
+      }
+      .redirect-container a {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #eb0a1e;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 0.5rem;
+        transition: background-color 0.3s;
+      }
+      .redirect-container a:hover {
+        background-color: #c20819;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="redirect-container">
+      <h1>Toyota Masar</h1>
+      <p>Redirecting you to our website...</p>
+      <p>
+        If you are not redirected automatically, please select your language:
+      </p>
+      <a href="/en/">English</a>
+      <a href="/ar/">العربية</a>
+    </div>
+
+    <script>
+      // Attempt to detect browser language and redirect accordingly
+      (function () {
+        var lang = navigator.language || navigator.userLanguage;
+        if (lang && lang.startsWith('ar')) {
+          window.location.href = '/ar/';
+        } else {
+          window.location.href = '/en/';
+        }
+      })();
+    </script>
+  </body>
+</html>
