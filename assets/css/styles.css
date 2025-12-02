@@ -50,6 +50,34 @@
   /* Layout */
   --container-max: 1200px;
   --navbar-height: 70px;
+
+  /* Logo framing */
+  --logo-bg: var(
+    --color-white
+  ); /* default background behind transparent logos */
+  --logo-padding: 6px; /* inner spacing around the logo image */
+  --logo-radius: var(--radius-md); /* adjustable corner roundness */
+  --logo-bg-alpha: 100%; /* background opacity as percentage (e.g., 80%) */
+}
+
+/* Self-hosted Cairo variable/weight-range webfont (woff2) */
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  /* file covers weights 200–1000 */
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('../fonts/cairo-normal-200-1000.woff2') format('woff2');
+}
+
+/* Self-hosted Roboto variable/weight-range webfont (woff2) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  /* file covers weights 100–900 */
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/roboto-normal-100-900.woff2') format('woff2');
 }
 
 /* ============================================
@@ -393,12 +421,15 @@ main {
   display: flex;
   height: 100%;
   transition: transform var(--transition-slow);
+  direction: ltr; /* keep slide flow consistent even on RTL pages */
 }
 
 .carousel__slide {
   min-width: 100%;
   height: 100%;
   position: relative;
+  object-fit: cover;
+  object-position: center center; /* default */
 }
 
 .carousel__slide img {
@@ -458,6 +489,10 @@ html[dir='rtl'] .carousel__overlay {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  line-height: 1;
+  font-family: var(--font-family-en);
+  direction: ltr;
+  unicode-bidi: isolate-override;
   color: var(--color-text);
   transition: all var(--transition-fast);
   z-index: 10;
@@ -476,15 +511,7 @@ html[dir='rtl'] .carousel__overlay {
   right: var(--spacing-lg);
 }
 
-html[dir='rtl'] .carousel__nav--prev {
-  left: auto;
-  right: var(--spacing-lg);
-}
-
-html[dir='rtl'] .carousel__nav--next {
-  right: auto;
-  left: var(--spacing-lg);
-}
+/* RTL nav position overrides removed to keep behavior consistent. */
 
 .carousel__dots {
   position: absolute;
@@ -567,7 +594,7 @@ html[dir='rtl'] .carousel__nav--next {
 }
 
 .service-item:nth-child(even) .service-item__image {
-  order: 2;
+  order: 1;
 }
 
 html[dir='rtl'] .service-item:nth-child(even) {
@@ -575,19 +602,25 @@ html[dir='rtl'] .service-item:nth-child(even) {
 }
 
 html[dir='rtl'] .service-item:nth-child(even) .service-item__image {
-  order: -1;
+  order: 1;
+}
+
+html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
+  order: 1;
 }
 
 .service-item__image {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  width: fit-content;
+  justify-self: center; /* center this grid item horizontally */
 }
 
 .service-item__image img {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .service-item__content {
@@ -643,7 +676,7 @@ html[dir='rtl'] .service-item:nth-child(even) .service-item__image {
 .about-section__text {
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-lg);
-  white-space: pre-line;
+  /* white-space: pre-line; */
   line-height: 1.8;
 }
 
@@ -809,6 +842,16 @@ html[dir='rtl'] .about-section__mission {
 .footer__logo img {
   height: 100%;
   width: auto;
+  /* Fallback solid color */
+  background-color: var(--logo-bg);
+  /* Prefer semi-transparent mix when supported */
+  background-color: color-mix(
+    in srgb,
+    var(--logo-bg) var(--logo-bg-alpha),
+    transparent
+  );
+  border-radius: var(--logo-radius);
+  padding: var(--logo-padding);
 }
 
 .footer__tagline {
@@ -1022,10 +1065,40 @@ html[dir='rtl'] .about-section__mission {
 
   .footer__logo {
     margin: 0 auto var(--spacing-md);
+    width: fit-content;
   }
 
   .footer__contact-item {
     justify-content: center;
+  }
+
+  .carousel__slide:nth-child(1) img {
+    object-position: 7% center; /* Shift left */
+  }
+
+  .carousel__slide:nth-child(2) img {
+    object-position: 27% center; /* Shift right */
+  }
+
+  .carousel__slide:nth-child(3) img {
+    object-position: 30% center; /* Shift up */
+  }
+
+  .carousel__slide:nth-child(4) img {
+    object-position: center center; /* Shift down */
+  }
+
+  /* Adjust remaining slides as needed */
+  .carousel__slide:nth-child(5) img {
+    object-position: 35% center;
+  }
+
+  .carousel__slide:nth-child(6) img {
+    object-position: center center;
+  }
+
+  .carousel__slide:nth-child(7) img {
+    object-position: center center;
   }
 }
 
@@ -1093,4 +1166,31 @@ html[dir='rtl'] .about-section__mission {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Better underline helpers */
+.u-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: auto;
+}
+
+.u-underline-soft {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.5px;
+
+  text-underline-offset: 8px;
+  text-decoration-skip-ink: auto;
+}
+
+/* Accent underline using background gradient for full control */
+.u-accent-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  padding-bottom: 2px; /* keeps underline visually separated */
+  color: var(--color-primary);
 }

@@ -57,12 +57,13 @@
       content="https://toyotamasar.com/assets/images/og/home-en.jpg"
     />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts (self-hosted Roboto) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="../assets/fonts/roboto-normal-100-900.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <!-- Styles -->
@@ -79,8 +80,8 @@
         "logo": "https://toyotamasar.com/assets/images/logo.png",
         "image": "https://toyotamasar.com/assets/images/og/home-en.jpg",
         "description": "Official Toyota dealership in Riyadh offering sales, service, and genuine parts.",
-        "telephone": "+966 11 234 5678",
-        "email": "main@toyotamasar.com",
+        "telephone": "+218 51 2661907",
+        "email": "info@masar.net.ly",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "King Fahd Road, Al Olaya District",
@@ -114,7 +115,10 @@
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="container navbar__container">
         <a href="./" class="navbar__logo" aria-label="Al Masar Muttahida Home">
-          <img src="../assets/images/logo.png" alt="Al Masar Muttahida Logo" />
+          <img
+            src="../assets/images/og/logo.png"
+            alt="Al Masar Muttahida Logo"
+          />
         </a>
 
         <ul class="navbar__menu">
@@ -156,67 +160,13 @@
       <section class="hero" aria-label="Featured content">
         <div class="carousel">
           <div class="carousel__slides">
-            <!-- Slide 1 -->
             <div class="carousel__slide">
-              <img
-                src="../assets/images/hero/hero-1.jpg"
-                alt="Welcome to Al Masar Muttahida"
-              />
-              <div class="carousel__overlay">
-                <div class="container">
-                  <div class="carousel__content">
-                    <h1 class="carousel__title">
-                      Welcome to Al Masar Muttahida
-                    </h1>
-                    <p class="carousel__subtitle">
-                      Experience Excellence in Every Drive
-                    </p>
-                    <a href="services.html" class="btn btn--white"
-                      >Visit Our Services</a
-                    >
-                  </div>
-                </div>
-              </div>
+              <img src="../assets/images/hero/hero-6.jpg" />
+              <div class="carousel__overlay"></div>
             </div>
-
-            <!-- Slide 2 -->
             <div class="carousel__slide">
-              <img
-                src="../assets/images/hero/hero-2.jpg"
-                alt="New Toyota Models Available"
-              />
-              <div class="carousel__overlay">
-                <div class="container">
-                  <div class="carousel__content">
-                    <h2 class="carousel__title">New Models Available</h2>
-                    <p class="carousel__subtitle">
-                      Discover Our Latest Toyota Collection
-                    </p>
-                    <a href="services.html" class="btn btn--white"
-                      >Explore Now</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel__slide">
-              <img
-                src="../assets/images/hero/hero-3.jpg"
-                alt="Expert Toyota Service Center"
-              />
-              <div class="carousel__overlay">
-                <div class="container">
-                  <div class="carousel__content">
-                    <h2 class="carousel__title">Expert Service Center</h2>
-                    <p class="carousel__subtitle">
-                      Professional Care for Your Toyota
-                    </p>
-                    <a href="contact.html" class="btn btn--white">Contact Us</a>
-                  </div>
-                </div>
-              </div>
+              <img src="../assets/images/hero/hero-3.jpg" />
+              <div class="carousel__overlay"></div>
             </div>
           </div>
 
@@ -286,7 +236,7 @@
           <div class="footer__brand">
             <div class="footer__logo">
               <img
-                src="../assets/images/logo-white.png"
+                src="../assets/images/og/logo.png"
                 alt="Al Masar Muttahida"
               />
             </div>
@@ -307,11 +257,11 @@
             <h4 class="footer__title">Contact Us</h4>
             <div class="footer__contact-item">
               <span>📞</span>
-              <a href="tel:+966112345678">+966 11 234 5678</a>
+              <a href="tel:+218512661907">+218 51 2661907</a>
             </div>
             <div class="footer__contact-item">
               <span>✉️</span>
-              <a href="mailto:main@toyotamasar.com">main@toyotamasar.com</a>
+              <a href="mailto:info@masar.net.ly">info@masar.net.ly</a>
             </div>
           </div>
         </div>

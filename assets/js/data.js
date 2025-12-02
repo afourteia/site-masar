@@ -141,8 +141,8 @@ We believe in building lasting relationships with our customers based on trust, 
       address_ar:
         'طريق الملك فهد، حي العليا، الرياض 12211، المملكة العربية السعودية',
       map_link: 'https://maps.google.com/?q=24.7136,46.6753',
-      phone: ['+966 11 234 5678', '+966 11 234 5679'],
-      email: 'main@toyotamasar.com',
+      phone: ['+218 51 2661907', '+966 11 234 5679'],
+      email: 'info@masar.net.ly',
       hours_en: 'Saturday - Thursday: 8:00 AM - 9:00 PM',
       hours_ar: 'السبت - الخميس: 8:00 صباحاً - 9:00 مساءً',
     },
@@ -330,8 +330,8 @@ const StructuredData = {
     image: 'https://toyotamasar.com/assets/images/og/home-en.jpg',
     description:
       'Official Toyota dealership in Riyadh offering sales, service, and genuine parts.',
-    telephone: '+966 11 234 5678',
-    email: 'main@toyotamasar.com',
+    telephone: '+218 51 2661907',
+    email: 'info@masar.net.ly',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'King Fahd Road, Al Olaya District',
