@@ -326,8 +326,8 @@ const StructuredData = {
     name: 'Al Masar Muttahida',
     alternateName: 'المسار المتحدة',
     url: 'https://masar.net.ly',
-    logo: 'https://masar.net.ly/assets/images/logo.png',
-    image: 'https://masar.net.ly/assets/images/og/home-en.jpg',
+    logo: 'https://masar.net.ly/assets/images/og/logo.jpeg',
+    image: 'https://masar.net.ly/assets/images/og/logo.jpeg',
     description:
       'Official Toyota dealership in Riyadh offering sales, service, and genuine parts.',
     telephone: '+218 51 2661907',
