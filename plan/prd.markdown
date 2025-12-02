@@ -1,5 +1,5 @@
 PRODUCT REQUIREMENTS DOCUMENT (PRD)
-Toyota Dealership Static Website  
+Toyota distributorship Static Website  
 Version 1.0
 
 ---
@@ -8,7 +8,7 @@ Version 1.0
 
 ### 1.1 Purpose
 
-This PRD describes the requirements for a simple, multilingual (English + Arabic), mobile-friendly static website for a Toyota dealership. It outlines visual theme, pages, functionality, component structure, and content organization.
+This PRD describes the requirements for a simple, multilingual (English + Arabic), mobile-friendly static website for a Toyota distributorship. It outlines visual theme, pages, functionality, component structure, and content organization.
 
 ### 1.2 Goals
 
@@ -25,7 +25,7 @@ This PRD describes the requirements for a simple, multilingual (English + Arabic
 ### 1.3 Target Users
 
 - Local customers looking for Toyota sales, parts, and after-sales services.
-- Visitors searching for contact information and dealership locations.
+- Visitors searching for contact information and distributorship locations.
 - Mobile-first users.
 
 ---
@@ -124,7 +124,7 @@ Locale-specific text is stored in translation files.
 
 ### 5.2 Footer (Reusable Component)
 
-- Dealership name
+- distributorship name
 - Quick links (same as navbar)
 - Copyright
 - Small logo (optional)
@@ -133,7 +133,7 @@ Locale-specific text is stored in translation files.
 
 **Purpose**
 
-Introduce dealership and showcase visuals.
+Introduce distributorship and showcase visuals.
 
 **Content Requirements**
 
@@ -150,7 +150,7 @@ Introduce dealership and showcase visuals.
 
 **Purpose**
 
-Showcase main dealership services.
+Showcase main distributorship services.
 
 **Shared Data Source**
 
@@ -198,7 +198,7 @@ Each section includes:
 
 **Purpose**
 
-Describe the dealership.
+Describe the distributorship.
 
 **Layout**
 
@@ -207,14 +207,14 @@ Describe the dealership.
 
 **Content**
 
-- Dealership overview
+- distributorship overview
 - Optional mission/vision
 
 ### 5.6 Page 4: Contact Page
 
 **Purpose**
 
-Display dealership contact details.
+Display distributorship contact details.
 
 **Shared Data Model**
 
@@ -229,7 +229,7 @@ Display dealership contact details.
       "address_ar": "",
       "map_link": "",
       "phone": ["+966...", "+966..."],
-      "email": "example@dealership.com"
+      "email": "example@distributorship.com"
     },
     {
       "id": "branch2",
@@ -239,7 +239,7 @@ Display dealership contact details.
       "address_ar": "",
       "map_link": "",
       "phone": ["+966..."],
-      "email": "example@dealership.com"
+      "email": "example@distributorship.com"
     }
   ]
 }
@@ -346,7 +346,7 @@ Display dealership contact details.
   - Generate `sitemap.xml` with both language variants.
   - Provide `robots.txt` allowing crawl of public pages.
 - **Structured Data (JSON-LD):**
-  - `Organization` or `LocalBusiness` with dealership name, logo, phone, email, and branches as `PostalAddress`.
+  - `Organization` or `LocalBusiness` with distributorship name, logo, phone, email, and branches as `PostalAddress`.
   - `BreadcrumbList` for multi-level pages (if applicable).
 - **URL Strategy:** Clean, human-readable paths; language in path or subdirectory, e.g., `/en/...` and `/ar/...`.
 - **Performance Signals:**
@@ -362,9 +362,9 @@ Display dealership contact details.
 {
   "en": {
     "home": {
-      "title": "Toyota Dealership — CityName",
+      "title": "Toyota distributorship — CityName",
       "description": "Official Toyota sales, parts, and service in CityName.",
-      "keywords": ["Toyota", "dealership", "service", "parts", "CityName"],
+      "keywords": ["Toyota", "distributorship", "service", "parts", "CityName"],
       "ogImage": "/assets/images/og/home.jpg"
     },
     "services": {

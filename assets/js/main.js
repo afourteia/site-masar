@@ -1,5 +1,5 @@
 /**
- * Toyota Dealership Static Website - Main JavaScript
+ * Toyota distributorship Static Website - Main JavaScript
  * Version 1.0
  */
 
