@@ -156,7 +156,7 @@ We believe in building lasting relationships with our customers based on trust, 
         'المنطقة الصناعية، طريق الدائري الشرقي، الرياض 14321، المملكة العربية السعودية',
       map_link: 'https://maps.google.com/?q=24.7000,46.7200',
       phone: ['+966 11 345 6789'],
-      email: 'service@toyotamasar.com',
+      email: 'info@masar.net.ly',
       hours_en: 'Saturday - Thursday: 7:00 AM - 10:00 PM',
       hours_ar: 'السبت - الخميس: 7:00 صباحاً - 10:00 مساءً',
     },
@@ -205,7 +205,7 @@ We believe in building lasting relationships with our customers based on trust, 
 
 // SEO Configuration
 const SEOConfig = {
-  baseUrl: 'https://toyotamasar.com',
+  baseUrl: 'https://masar.net.ly',
   en: {
     home: {
       title: 'Al Masar Muttahida — Official Toyota Dealer in Riyadh',
@@ -325,9 +325,9 @@ const StructuredData = {
     '@type': 'AutoDealer',
     name: 'Al Masar Muttahida',
     alternateName: 'المسار المتحدة',
-    url: 'https://toyotamasar.com',
-    logo: 'https://toyotamasar.com/assets/images/logo.png',
-    image: 'https://toyotamasar.com/assets/images/og/home-en.jpg',
+    url: 'https://masar.net.ly',
+    logo: 'https://masar.net.ly/assets/images/logo.png',
+    image: 'https://masar.net.ly/assets/images/og/home-en.jpg',
     description:
       'Official Toyota dealership in Riyadh offering sales, service, and genuine parts.',
     telephone: '+218 51 2661907',

@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://toyotamasar.com/sitemap.xml
+Sitemap: https://masar.net.ly/sitemap.xml
 
 # Crawl-delay (optional, for polite crawling)
 Crawl-delay: 1
