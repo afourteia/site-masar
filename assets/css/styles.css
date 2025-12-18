@@ -785,6 +785,9 @@ html[dir='rtl'] .about-section__mission {
 
 .contact-card__value {
   color: var(--color-text-secondary);
+  display: block; /* stack multiple phone entries vertically */
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
 }
 
 .contact-card__value a {
@@ -795,6 +798,14 @@ html[dir='rtl'] .about-section__mission {
 .contact-card__value a:hover {
   color: var(--color-primary-dark);
   text-decoration: underline;
+}
+
+.contact-card__note {
+  display: inline-block;
+  margin-inline-start: 0.5rem; /* logical margin works with RTL */
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  vertical-align: baseline;
 }
 
 .contact-card__map-link {
