@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toyota Masar - Redirecting...</title>
+    <title>Masar Muttahid - Redirecting...</title>
     <meta
       name="description"
-      content="Official Toyota distributorship in Libya - Sales, Service, and Genuine Parts"
+      content="Official Toyota distributor in Libya, Service, and Genuine Parts"
     />
 
     <!-- Redirect to English version by default -->
@@ -73,13 +73,30 @@
     </div>
 
     <script>
-      // Attempt to detect browser language and redirect accordingly
+      // Detect preferred languages and redirect accordingly.
+      // Priority: Arabic if present, then English; if neither present (or no languages), default to Arabic.
+      // Uses replace() so the redirect doesn't create an extra history entry.
       (function () {
-        var lang = navigator.language || navigator.userLanguage;
-        if (lang && lang.startsWith('ar')) {
-          window.location.href = './ar/';
+        var langs =
+          navigator.languages ||
+          (navigator.language ? [navigator.language] : []);
+        if (!Array.isArray(langs) || langs.length === 0) {
+          window.location.replace('./ar/');
+          return;
+        }
+        var hasArabic = langs.some(function (l) {
+          return l && l.startsWith('ar');
+        });
+        var hasEnglish = langs.some(function (l) {
+          return l && l.startsWith('en');
+        });
+        if (hasArabic) {
+          window.location.replace('./ar/');
+        } else if (hasEnglish) {
+          window.location.replace('./en/');
         } else {
-          window.location.href = './en/';
+          // No clear Arabic/English preference: default to Arabic
+          window.location.replace('./ar/');
         }
       })();
     </script>
