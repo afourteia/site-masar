@@ -119,86 +119,90 @@
     </nav>
 
     <main>
-      <!-- Page Header -->
-      <header class="page-header">
-        <div class="container">
-          <h1 class="page-header__title">من نحن</h1>
-          <p class="page-header__subtitle">شريكك الموثوق لتويوتا</p>
+      <!-- Page Header / Hero -->
+      <header class="">
+        <div class="hero" role="banner" aria-label="صورة تعريفية للموقع">
+          <img
+            src="../assets/images/about/About Us 1.jpg"
+            alt="المسار المتحد - شريكك الموثوق لسيارات تويوتا"
+            loading="eager"
+          />
+
+          <div class="carousel__overlay" aria-hidden="true">
+            <div class="container">
+              <div class="carousel__content">
+                <!-- <h1 class="carousel__title">المسار المتحد</h1> -->
+                <!-- <p class="carousel__subtitle">
+                  شريكك الموثوق لسيارات تويوتا في ليبيا
+                </p> -->
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
-      <!-- About Section -->
+      <!-- About Section (image with text overlay) -->
       <section class="section" aria-labelledby="about-heading">
         <div class="container">
           <div class="about-section">
             <div class="about-section__image">
               <img
-                src="../assets/images/about/about-1.webp"
+                src="../assets/images/about/About Us 2.jpg"
                 alt="وكالة المسار المتحد"
               />
-            </div>
-            <div class="about-section__content">
-              <h2 id="about-heading" class="about-section__title">عن الشركة</h2>
-              <div class="about-section__text">
-                <p>
-                  نحن في
-                  <strong style="color: var(--color-primary)"
-                    >شركة المسار المتحد</strong
-                  >
-                  نتفخر بكوننا
-                  <strong>الموزّع المعتمد لسيارات تويوتا</strong> في مدينتي
-                  مصراتة و زليتن ، حيث نلتزم بتقديم أعلى مستويات الجودة والخدمة
-                  التي تعكس القيم العريقة لعلامة تويوتا العالمية. منذ تأسيسنا،
-                  وضعنا هدفنا في أن نكون الخيار الأول للعملاء من خلال توفير أحدث
-                  موديلات سيارات تويوتا، وتقديم خدمات ما بعد البيع، والصيانة،
-                  وقطع الغيار الأصلية بأعلى معايير الاحترافية والموثوقية.
-                </p>
-                <p>
-                  بفضل فريقنا المتخصص ومنشآتنا الحديثة، نواصل في
-                  <strong style="color: var(--color-primary)"
-                    >شركة المسار المتحد</strong
-                  >
-                  تعزيز الثقة التي منحتنا إياها تويوتا وعملاؤنا، ونسعى باستمرار
-                  لتطوير خدماتنا لتلبية احتياجات السوق وتوقعات عملائنا الكرام.
-                </p>
-              </div>
 
-              <div class="about-section__mission">
-                <h4>رؤيتنا</h4>
-                <p>
-                  أن نُسهِم في تشكيل مستقبل التنقّل في ليبيا عبر تقديم جودة
-                  تويوتا الموثوقة وتجارب عملاء استثنائية وابتكار مستمر.
-                </p>
-              </div>
+              <!-- Overlayed content sits on top of the image for larger viewports -->
+              <div
+                class="about-section__content"
+                role="region"
+                aria-labelledby="about-heading"
+              >
+                <h2 id="about-heading" class="about-section__title">
+                  عن الشركة
+                </h2>
+                <div class="about-section__text">
+                  <p>
+                    نحن في
+                    <strong style="color: var(--color-primary)"
+                      >شركة المسار المتحد</strong
+                    >
+                    نتفخر بكوننا
+                    <strong>الموزّع المعتمد لسيارات تويوتا</strong> في مدينتي
+                    مصراتة و زليتن ، حيث نلتزم بتقديم أعلى مستويات الجودة
+                    والخدمة التي تعكس القيم العريقة لعلامة تويوتا العالمية. منذ
+                    تأسيسنا، وضعنا هدفنا في أن نكون الخيار الأول للعملاء من خلال
+                    توفير أحدث موديلات سيارات تويوتا، وتقديم خدمات ما بعد البيع،
+                    والصيانة، وقطع الغيار الأصلية بأعلى معايير الاحترافية
+                    والموثوقية.
+                  </p>
+                  <p>
+                    بفضل فريقنا المتخصص ومنشآتنا الحديثة، نواصل في
+                    <strong style="color: var(--color-primary)"
+                      >شركة المسار المتحد</strong
+                    >
+                    تعزيز الثقة التي منحتنا إياها تويوتا وعملاؤنا، ونسعى
+                    باستمرار لتطوير خدماتنا لتلبية احتياجات السوق وتوقعات
+                    عملائنا الكرام.
+                  </p>
+                </div>
 
-              <a href="contact.html" class="btn btn--primary mt-4">اتصل بنا</a>
+                <div class="about-section__mission">
+                  <h4>رؤيتنا</h4>
+                  <p>
+                    أن نُسهِم في تشكيل مستقبل التنقّل في ليبيا عبر تقديم جودة
+                    تويوتا الموثوقة وتجارب عملاء استثنائية وابتكار مستمر.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Values Section -->
-      <section class="section section--alt">
-        <div class="container">
-          <h2 class="text-center mb-4" style="color: var(--color-primary)">
-            لماذا تختار المسار المتحد؟
-          </h2>
-          <div class="highlights__grid">
-            <div class="highlight-card">
-              <span class="highlight-card__icon" aria-hidden="true">✓</span>
-              <h3 class="highlight-card__title">وكيل معتمد</h3>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-card__icon" aria-hidden="true">⭐</span>
-              <h3 class="highlight-card__title">فريق متخصص</h3>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-card__icon" aria-hidden="true">🛡️</span>
-              <h3 class="highlight-card__title">جودة مضمونة</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- <section class="section section--alt">
+        <div class="container"></div>
+      </section> -->
     </main>
 
     <!-- Footer -->
@@ -209,7 +213,6 @@
             <div class="footer__logo">
               <img src="../assets/images/og/logo.png" alt="المسار المتحد" />
             </div>
-            <p class="footer__tagline">شريكك الموثوق لتويوتا</p>
           </div>
 
           <div class="footer__nav">
