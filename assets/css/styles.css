@@ -573,6 +573,15 @@ html[dir='rtl'] .carousel__overlay {
   color: var(--color-primary);
 }
 
+/* Welcome card (single large card) should span the full grid width */
+.highlight-card--welcome {
+  grid-column: 1 / -1;
+  text-align: right; /* keep text aligned for RTL */
+  padding: var(--spacing-2xl);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
 /* ============================================
    Services Section
    ============================================ */
@@ -612,15 +621,20 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 .service-item__image {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  width: fit-content;
+  box-shadow: none; /* remove shadow per request */
+  border: none; /* ensure no border */
+  width: auto;
   justify-self: center; /* center this grid item horizontally */
+  display: block;
+  max-height: 350px; /* keep current max height behaviour */
 }
 
 .service-item__image img {
-  width: 100%;
-  height: 350px;
-  object-fit: contain;
+  display: block;
+  width: auto;
+  height: 100%;
+  max-height: 350px;
+  object-fit: cover; /* crop to fill the container cleanly */
 }
 
 .service-item__content {
@@ -1031,6 +1045,9 @@ html[dir='rtl'] .about-section__mission {
 
   .service-item__image img {
     height: 250px;
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .service-item__content {
@@ -1193,4 +1210,120 @@ html[dir='rtl'] .about-section__mission {
   background-size: 100% 2px;
   padding-bottom: 2px; /* keeps underline visually separated */
   color: var(--color-primary);
+}
+
+/* ============================================
+   About Section Overlay Styles
+   Adds a contrasting, semi-opaque panel that overlays the image
+   on larger screens while preserving a stacked layout on mobile.
+   ============================================ */
+.about-section {
+  /* keep legacy grid fallback for small screens, but allow overlaying */
+  display: block;
+}
+
+.about-section__image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay panel that sits on top of the image (desktop/tablet) */
+.about-section__content {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  width: clamp(300px, 46%, 560px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.46));
+  color: var(--color-white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+
+html[dir='rtl'] .about-section__content {
+  left: 4%;
+  right: auto;
+  text-align: right;
+}
+
+.about-section__content .about-section__title {
+  color: var(--color-white);
+}
+
+.about-section__content .about-section__text {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--spacing-md);
+}
+
+.about-section__content .about-section__mission {
+  background: rgba(255, 255, 255, 0.06);
+  padding: var(--spacing-md);
+  border-radius: calc(var(--radius-md) - 2px);
+  margin-top: var(--spacing-md);
+  border-left: none;
+  border-right: 4px solid rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+}
+
+html[dir='rtl'] .about-section__content .about-section__mission {
+  border-right: 4px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Mobile: fall back to stacked, readable layout */
+@media (max-width: 768px) {
+  .about-section {
+    display: block;
+  }
+
+  .about-section__image img {
+    height: auto;
+  }
+
+  .about-section__content {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: var(--spacing-md);
+    background: var(--color-off-white);
+    color: var(--color-text);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .about-section__content .about-section__mission {
+    background: var(--color-white);
+    color: var(--color-text);
+    border-right: none;
+    border-left: 4px solid var(--color-primary);
+  }
+}
+
+/* Mobile overrides to ensure readable dark text when overlay is disabled */
+@media (max-width: 768px) {
+  .about-section__content .about-section__title,
+  .about-section__content .about-section__text,
+  .about-section__content .about-section__mission {
+    color: var(--color-text) !important;
+  }
+
+  /* Make mission box clearly light on mobile stacked layout */
+  .about-section__content .about-section__mission {
+    background: var(--color-white) !important;
+  }
+
+  /* Remove any semi-opaque background left on content so it reads as a normal block */
+  .about-section__content {
+    background: var(--color-off-white) !important;
+  }
 }
