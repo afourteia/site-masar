@@ -1103,23 +1103,29 @@ html[dir='rtl'] .about-section__mission {
 
   /* Services Mobile */
   .service-item {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-lg);
   }
 
-  .service-item:nth-child(even) .service-item__image {
+  /* Ensure DOM order controls stacking on mobile for consistent
+     behaviour between LTR and RTL pages (Arabic is the reference).
+     Use explicit ordering only when necessary; default to DOM order. */
+  .service-item__image {
     order: 0;
   }
 
-  .service-item__image img {
-    height: fit-content;
-    max-height: 250px;
-    width: fit-content;
-    object-fit: contain;
+  .service-item__content {
+    order: 1;
+    padding: 0;
   }
 
-  .service-item__content {
-    padding: 0;
+  .service-item__image img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
   }
 
   /* About Mobile */
