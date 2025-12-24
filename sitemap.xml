@@ -9,8 +9,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/"/>
   </url>
   
   <url>
@@ -19,8 +19,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/services.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/services.html"/>
   </url>
   
   <url>
@@ -29,8 +29,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/about.html"/>
   </url>
   
   <url>
@@ -39,8 +39,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/contact.html"/>
   </url>
   
   <!-- Arabic Pages -->
@@ -50,8 +50,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/"/>
   </url>
   
   <url>
@@ -60,8 +60,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/services.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/services.html"/>
   </url>
   
   <url>
@@ -70,8 +70,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/about.html"/>
   </url>
   
   <url>
@@ -80,8 +80,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://masar.net.ly/en/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://masar.net.ly/ar/contact.html"/>
   </url>
   
 </urlset>

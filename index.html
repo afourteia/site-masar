@@ -9,17 +9,21 @@
       content="Masar, Authorized Toyota Distributor in Libya Misurata & Zliten. Official Toyota sales, genuine parts, and expert service."
     />
 
-    <!-- Redirect to English version by default -->
-    <meta http-equiv="refresh" content="0; url=./en/" />
-    <link rel="canonical" href="https://masar.net.ly/en/" />
+    <!-- Redirect handled by JavaScript for language detection.
+         For non-JS clients the noscript fallback below will send users to English. -->
+    
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=./ar/" />
+    </noscript>
+    <link rel="canonical" href="https://masar.net.ly/ar/" />
 
     <!-- Hreflang for language discovery -->
     <link rel="alternate" hreflang="en" href="https://masar.net.ly/en/" />
-    <link rel="alternate" hreflang="ar-SA" href="https://masar.net.ly/ar/" />
+    <link rel="alternate" hreflang="ar-LY" href="https://masar.net.ly/ar/" />
     <link
       rel="alternate"
       hreflang="x-default"
-      href="https://masar.net.ly/en/"
+      href="https://masar.net.ly/ar/"
     />
 
     <style>
@@ -74,7 +78,7 @@
 
     <script>
       // Detect preferred languages and redirect accordingly.
-      // Priority: Arabic if present, then English; if neither present (or no languages), default to Arabic.
+      // Priority: Arabic if present, then English; default to Arabic.
       // Uses replace() so the redirect doesn't create an extra history entry.
       (function () {
         var langs =
