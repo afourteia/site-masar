@@ -1108,16 +1108,15 @@ html[dir='rtl'] .about-section__mission {
     gap: var(--spacing-lg);
   }
 
-  /* Ensure DOM order controls stacking on mobile for consistent
-     behaviour between LTR and RTL pages (Arabic is the reference).
-     Use explicit ordering only when necessary; default to DOM order. */
-  .service-item__image {
+  /* Force content-first stacking on mobile so text appears before images
+     regardless of the HTML element order (fixes inconsistent ordering). */
+  .service-item__content {
     order: 0;
+    padding: 0;
   }
 
-  .service-item__content {
+  .service-item__image {
     order: 1;
-    padding: 0;
   }
 
   .service-item__image img {
