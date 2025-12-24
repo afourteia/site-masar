@@ -636,6 +636,14 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
   padding: var(--spacing-lg);
 }
 
+.service-item__content-btn {
+  /* Center the CTA button inside the service item content.
+     Use a shrink-to-content block so `margin: 0 auto` centers it. */
+  display: block;
+  width: max-content;
+  margin: var(--spacing-lg) auto 0;
+}
+
 .service-item__icon {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
