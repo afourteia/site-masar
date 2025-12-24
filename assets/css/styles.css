@@ -441,28 +441,20 @@ main {
 .carousel__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%
-  );
+  background: none;
   display: flex;
   align-items: center;
 }
 
 html[dir='rtl'] .carousel__overlay {
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%
-  );
+  background: none;
 }
 
 .carousel__content {
-  color: var(--color-white);
-  max-width: 600px;
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .carousel__title {
@@ -472,9 +464,12 @@ html[dir='rtl'] .carousel__overlay {
 }
 
 .carousel__subtitle {
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  max-width: 500px;
   font-size: 1.25rem;
-  margin-bottom: var(--spacing-xl);
-  opacity: 0.9;
 }
 
 .carousel__nav {
@@ -660,10 +655,9 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
    About Section
    ============================================ */
 .about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
+  display: block;
+  width: 100%;
+  margin: auto;
 }
 
 .about-section__image {
@@ -695,11 +689,20 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 }
 
 .about-section__mission {
+  /* position: absolute; */
+  /* top: calc(100% + var(--spacing-xl)); */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  width: 90%;
+  max-width: 1000px;
   background-color: var(--color-off-white);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
-  margin-top: var(--spacing-xl);
   border-left: 4px solid var(--color-primary);
+  z-index: 1;
+  font-size: 1.1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 html[dir='rtl'] .about-section__mission {
@@ -710,6 +713,34 @@ html[dir='rtl'] .about-section__mission {
 .about-section__mission h4 {
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+/* Ensure mission card is consistently centered on desktop/tablet
+   Keep mobile rules (in media queries) untouched. This selector
+   is specific and scoped to the image container to avoid side-effects. */
+@media (min-width: 769px) {
+  .about-section__image {
+    position: relative; /* make sure absolute children are positioned to this box */
+  }
+
+  .about-section__image .about-section__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .about-section__image .about-section__content > .about-section__mission {
+    position: relative;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    width: min(90%, 900px) !important;
+    max-width: none;
+    box-sizing: border-box;
+    text-align: start;
+  }
 }
 
 /* ============================================
@@ -1021,6 +1052,32 @@ html[dir='rtl'] .about-section__mission {
     font-size: 1.25rem;
   }
 
+  .about-section__mission {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    margin-top: var(--spacing-xl);
+  }
+
+  .carousel__overlay {
+    position: static;
+    background: none;
+    display: block;
+  }
+
+  .carousel__content {
+    position: static;
+    margin-top: var(--spacing-lg);
+    transform: none;
+  }
+
+  .carousel__subtitle {
+    max-width: none;
+  }
+
   /* Highlights Mobile */
   .highlights__grid {
     grid-template-columns: 1fr;
@@ -1055,10 +1112,10 @@ html[dir='rtl'] .about-section__mission {
   }
 
   .service-item__image img {
-    height: 250px;
+    height: fit-content;
     max-height: 250px;
-    width: 100%;
-    object-fit: cover;
+    width: fit-content;
+    object-fit: contain;
   }
 
   .service-item__content {
@@ -1255,7 +1312,7 @@ html[dir='rtl'] .about-section__mission {
   transform: translateY(-50%);
   width: clamp(300px, 46%, 560px);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.46));
-  color: var(--color-white);
+  /* color: var(--color-white); */
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -1269,36 +1326,32 @@ html[dir='rtl'] .about-section__content {
 }
 
 .about-section__content .about-section__title {
-  color: var(--color-white);
+  /* color: var(--color-white); */
 }
 
 .about-section__content .about-section__text {
-  color: rgba(255, 255, 255, 0.95);
+  /* color: rgba(255, 255, 255, 0.95); */
   margin-bottom: var(--spacing-md);
-}
-
-.about-section__content .about-section__mission {
-  background: rgba(255, 255, 255, 0.06);
-  padding: var(--spacing-md);
-  border-radius: calc(var(--radius-md) - 2px);
-  margin-top: var(--spacing-md);
-  border-left: none;
-  border-right: 4px solid rgba(255, 255, 255, 0.14);
-  color: var(--color-white);
-}
-
-html[dir='rtl'] .about-section__content .about-section__mission {
-  border-right: 4px solid rgba(255, 255, 255, 0.14);
 }
 
 /* Mobile: fall back to stacked, readable layout */
 @media (max-width: 768px) {
   .about-section {
     display: block;
+    width: 100%;
+    margin-left: 0;
   }
 
   .about-section__image img {
     height: auto;
+  }
+
+  .about-section__mission {
+    position: static;
+    top: auto;
+    padding: var(--spacing-lg);
+    margin: 0;
+    overflow: hidden;
   }
 
   .about-section__content {
@@ -1311,26 +1364,13 @@ html[dir='rtl'] .about-section__content .about-section__mission {
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
   }
-
-  .about-section__content .about-section__mission {
-    background: var(--color-white);
-    color: var(--color-text);
-    border-right: none;
-    border-left: 4px solid var(--color-primary);
-  }
 }
 
 /* Mobile overrides to ensure readable dark text when overlay is disabled */
 @media (max-width: 768px) {
   .about-section__content .about-section__title,
-  .about-section__content .about-section__text,
-  .about-section__content .about-section__mission {
+  .about-section__content .about-section__text {
     color: var(--color-text) !important;
-  }
-
-  /* Make mission box clearly light on mobile stacked layout */
-  .about-section__content .about-section__mission {
-    background: var(--color-white) !important;
   }
 
   /* Remove any semi-opaque background left on content so it reads as a normal block */

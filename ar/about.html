@@ -67,6 +67,66 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <style>
+      /* Mission overlay: centered card on desktop; stacked above image on mobile */
+      .about-section__image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Override external styles with higher specificity */
+      html[dir='rtl'] .about-section__content,
+      .about-section__content {
+        position: absolute;
+        inset: 0;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        background: none !important; /* Remove the side-card gradient if present */
+      }
+
+      .about-section__mission {
+        pointer-events: auto;
+        position: relative;
+        width: min(90%, 900px);
+        background: rgba(255, 255, 255, 0.96);
+        padding: var(--spacing-2xl);
+        border-radius: var(--radius-lg);
+        border-inline-start: 6px solid var(--color-primary);
+        box-shadow: var(--shadow-card);
+        text-align: center;
+        z-index: 2;
+      }
+
+      /* Mobile: stack mission above the image (static flow) */
+      @media (max-width: 768px) {
+        html[dir='rtl'] .about-section__content,
+        .about-section__content {
+          position: static !important;
+          display: block !important;
+          padding: 0 !important;
+          width: auto !important;
+          transform: none !important;
+        }
+
+        .about-section__mission {
+          width: 100%;
+          margin-bottom: var(--spacing-md);
+          border-inline-start: 4px solid var(--color-primary);
+          padding: var(--spacing-lg);
+          background: var(--color-off-white);
+          box-shadow: none;
+          text-align: right; /* keep RTL readability */
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -131,36 +191,7 @@
           <div class="carousel__overlay" aria-hidden="true">
             <div class="container">
               <div class="carousel__content">
-                <!-- <h1 class="carousel__title">المسار المتحد</h1> -->
-                <!-- <p class="carousel__subtitle">
-                  شريكك الموثوق لسيارات تويوتا في ليبيا
-                </p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <!-- About Section (image with text overlay) -->
-      <section class="section" aria-labelledby="about-heading">
-        <div class="container">
-          <div class="about-section">
-            <div class="about-section__image">
-              <img
-                src="../assets/images/about/About Us 2.jpg"
-                alt="وكالة المسار المتحد"
-              />
-
-              <!-- Overlayed content sits on top of the image for larger viewports -->
-              <div
-                class="about-section__content"
-                role="region"
-                aria-labelledby="about-heading"
-              >
-                <h2 id="about-heading" class="about-section__title">
-                  عن الشركة
-                </h2>
-                <div class="about-section__text">
+                <div class="carousel__subtitle">
                   <p>
                     نحن في
                     <strong style="color: var(--color-primary)"
@@ -175,7 +206,7 @@
                     والصيانة، وقطع الغيار الأصلية بأعلى معايير الاحترافية
                     والموثوقية.
                   </p>
-                  <p>
+                  <!-- <p>
                     بفضل فريقنا المتخصص ومنشآتنا الحديثة، نواصل في
                     <strong style="color: var(--color-primary)"
                       >شركة المسار المتحد</strong
@@ -183,18 +214,36 @@
                     تعزيز الثقة التي منحتنا إياها تويوتا وعملاؤنا، ونسعى
                     باستمرار لتطوير خدماتنا لتلبية احتياجات السوق وتوقعات
                     عملائنا الكرام.
-                  </p>
-                </div>
-
-                <div class="about-section__mission">
-                  <h4>رؤيتنا</h4>
-                  <p>
-                    أن نُسهِم في تشكيل مستقبل التنقّل في ليبيا عبر تقديم جودة
-                    تويوتا الموثوقة وتجارب عملاء استثنائية وابتكار مستمر.
-                  </p>
+                  </p> -->
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- About Section (image with text overlay) -->
+      <section class="section" aria-labelledby="about-heading">
+        <div class="about-section">
+          <div class="about-section__image">
+            <!-- Overlayed content sits on top of the image for larger viewports -->
+            <div
+              class="about-section__content"
+              role="region"
+              aria-labelledby="about-heading"
+            >
+              <div class="about-section__mission">
+                <h4>رؤيتنا</h4>
+                <p>
+                  أن نُسهِم في تشكيل مستقبل التنقّل في ليبيا عبر تقديم جودة
+                  تويوتا الموثوقة وتجارب عملاء استثنائية وابتكار مستمر.
+                </p>
+              </div>
+            </div>
+            <img
+              src="../assets/images/about/About Us 2.jpg"
+              alt="وكالة المسار المتحد"
+            />
           </div>
         </div>
       </section>
