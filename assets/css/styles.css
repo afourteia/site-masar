@@ -620,16 +620,15 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
   border: none; /* ensure no border */
   justify-self: center; /* center this grid item horizontally */
   display: block;
+  max-height: 550px; /* cap height without fixing it */
   height: fit-content;
 }
 
 .service-item__image img {
-  display: block;
-  width: auto;
-  height: 100%;
-  max-height: 350px;
-  object-fit: cover; /* crop to fill the container cleanly */
-  -webkit-object-fit: cover; /* Safari fallback */
+  /* display: block; */
+
+  object-fit: contain; /* crop to fill the container cleanly */
+  -webkit-object-fit: contain; /* Safari fallback */
 }
 
 .service-item__content {
