@@ -619,16 +619,9 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
   box-shadow: none; /* remove shadow per request */
   border: none; /* ensure no border */
   justify-self: center; /* center this grid item horizontally */
-  max-height: 5550px;
+  max-height: 1000px;
   object-fit: cover;
   -webkit-object-fit: cover;
-}
-
-/* Add horizontal spacing for service images on larger screens */
-@media (max-width: 668px) {
-  .service-item__image {
-    margin: 0 50px;
-  }
 }
 
 .service-item__content {
