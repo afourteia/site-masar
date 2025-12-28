@@ -615,18 +615,17 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 
 .service-item__image {
   border-radius: var(--radius-lg);
-  overflow: visible;
+  overflow: hiden;
   box-shadow: none; /* remove shadow per request */
   border: none; /* ensure no border */
   justify-self: center; /* center this grid item horizontally */
-  display: block;
-  max-height: 550px; /* cap height without fixing it */
-  height: fit-content;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .service-item__image img {
-  /* display: block; */
-  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
   -webkit-object-fit: contain; /* Safari fallback */
