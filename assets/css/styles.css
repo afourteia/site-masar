@@ -626,10 +626,9 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 
 .service-item__image img {
   /* display: block; */
-
-  min-height: 100%;
-
-  object-fit: contain; /* crop to fill the container cleanly */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   -webkit-object-fit: contain; /* Safari fallback */
 }
 
