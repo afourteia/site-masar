@@ -615,7 +615,7 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 
 .service-item__image {
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: none; /* remove shadow per request */
   border: none; /* ensure no border */
   justify-self: center; /* center this grid item horizontally */
@@ -626,6 +626,7 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
 
 .service-item__image img {
   /* display: block; */
+  max-height: max-content;
 
   object-fit: contain; /* crop to fill the container cleanly */
   -webkit-object-fit: contain; /* Safari fallback */
