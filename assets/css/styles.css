@@ -618,10 +618,9 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
   overflow: hidden;
   box-shadow: none; /* remove shadow per request */
   border: none; /* ensure no border */
-  width: auto;
   justify-self: center; /* center this grid item horizontally */
   display: block;
-  max-height: 350px; /* keep current max height behaviour */
+  height: fit-content;
 }
 
 .service-item__image img {
@@ -630,6 +629,7 @@ html[dir='rtl'] .service-item:nth-child(odd) .service-item__image {
   height: 100%;
   max-height: 350px;
   object-fit: cover; /* crop to fill the container cleanly */
+  -webkit-object-fit: cover; /* Safari fallback */
 }
 
 .service-item__content {
